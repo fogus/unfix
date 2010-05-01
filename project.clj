@@ -1,4 +1,4 @@
-(defproject unfix "0.5.0"
+(defproject unfix "0.0.1"
   :description "A library profiding infix and postfix notation in Clojure."
   :dependencies [[org.clojure/clojure "1.2.0-master-SNAPSHOT"]]
   :dev-dependencies [[lein-clojars "0.5.0-SNAPSHOT"]
