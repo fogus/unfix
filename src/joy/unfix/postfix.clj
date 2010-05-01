@@ -1,4 +1,4 @@
-(ns joy.unfix)
+(ns joy.unfix.postfix)
 
 (defn rpn
   ([tokens] (rpn tokens []))
