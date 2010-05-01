@@ -1,7 +1,9 @@
 (ns joy.unfix.infix)
 
-(def AND #(and %1 %2))
-(def *rank* (zipmap [- + * / AND =] (iterate inc 1))) ;; Define order of precedence
+(def && #(and % %2))
+(def || #(or  % %2))
+
+(def *rank* (zipmap [- + * / < > && || =] (iterate inc 1))) ;; Define order of precedence
     
 (defn infix* [[a b & [c d e & more]]]
   (cond
