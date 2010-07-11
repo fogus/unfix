@@ -1,0 +1,73 @@
+--- pipeline:erb,tags,blocks,head,xmllint
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{lang:}">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Unfix Home</title>
+    <meta name="description" content="Unfix - an n-fix library for Clojure"/>
+    <meta name="keywords" content="clojure,lisp,infix,unfix,programming"/>
+    <meta name="author" content="Fogus"/>
+    <meta name="generator" content="webgen - http://webgen.rubyforge.com/"/>
+    <meta name="robots" content="index,follow,archive"/>
+
+    <link rel="icon" href="http://blog.fogus.me/images/labyrinth.ico" type="image/x-icon"/>
+    <link href="{relocatable: default.css}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="page">
+  <div id="header"><h1><a href="#">unfix</a></h1></div>
+  <hr />
+
+  <div id="frame" class="narrowcolumn">
+    <div class="post" id="readme">
+      <h2><a href="TODO" rel="bookmark" title="TODO">readme.1st</a></h2>
+      <div class="entry">
+        <webgen:block name="content"/>
+        <p class="postmetadata alt">
+	  For more information, view the unfix <a href="docs.html">documentation</a>.
+        </p>
+      </div>
+    </div>
+    <div class="post" id="infix-ex">
+      <h2><a href="TODO" rel="bookmark" title="TODO">infix.clj</a></h2>
+      <div class="entry">
+        <webgen:block name="infix"/>
+      </div>
+    </div>
+    <div class="post" id="postfix-ex">
+      <h2><a href="TODO" rel="bookmark" title="TODO">postfix.clj</a></h2>
+      <div class="entry">
+        <webgen:block name="postfix"/>
+      </div>
+    </div>
+  </div>
+
+  <div id="sidebar">
+    <ul>
+      <li class="home_icon"><a href="http://github.com/fogus/unfix">source</a></li>
+      <li class="home_icon"><a href="http://github.com/fogus/unfix/issues">tickets</a></li>
+      <li class="home_icon"><a href="http://github.com/fogus/unfix/wikis">wiki</a></li>
+      <li class="archive_item"><a href="docs.html">docs</a></li>
+    </ul>
+  </div>
+
+  <div id="footer">
+    <p>&copy; 2010 <a href="http://fogus.me">Fogus and Chouser</a><br/>
+       Site based on a design by <a href="http://stua.rtbrown.org">Stuart Brown</a>
+    </p>
+  </div>
+</div>
+
+<script type="text/javascript"> 
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script> 
+<script type="text/javascript"> 
+try {
+var pageTracker = _gat._getTracker("UA-921112-2");
+pageTracker._trackPageview();
+} catch(err) {}
+</script> 
+</body>
+</html>

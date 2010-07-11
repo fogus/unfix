@@ -1,6 +1,6 @@
 (ns joy.unfix.postfix)
 
-(defn rpn
+(defn- postfix*
   ([tokens] (rpn tokens []))
   ([[top & tail] stack]
      (if top
@@ -11,3 +11,7 @@
            (recur tail (conj (pop s) (top r l))))
          (recur tail (conj stack top)))
        stack)))
+
+(defn postfix 
+  [& args]
+  (postfix* args))

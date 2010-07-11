@@ -1,0 +1,115 @@
+a, a:link, a:visited, a:hover, a:active {color:#000;text-decoration:underline;}
+a img {border: none;}
+
+acronym, abbr, span.caps {cursor: help;font-size: 0.9em;letter-spacing: .07em;}
+acronym, abbr {border-bottom: 1px dashed #999;}
+
+blockquote {margin:15px 30px 0 10px;padding-left:20px;border-left:5px solid #ddd;}
+blockquote cite {margin: 5px 0 0;display: block;}
+
+body {margin:0px 0px 20px 0px;padding:0px;font-size:0.8em;font-family: Helvetica, Arial, Sans-Serif;background:#000;text-align:center;}
+
+code { font: 1.1em 'Courier New', Courier, Fixed; }
+
+h1 {font-size:1.5em;letter-spacing:-1px;padding:8px 0px 0px 72px;}
+h1, h2, h3 {font-weight: bold;}
+h2.pagetitle {font-size: 1.6em;display:block;background:Url('images/dogcow.png') 8px center no-repeat #fff;border:2px solid #000;border-right:4px solid #000;border-bottom:4px solid #000;padding:24px 8px 24px 80px;margin:16px 0px;}
+h3 {font-size: 1.3em;}
+
+hr {display:none;}
+
+img.centered {display:block;margin-left:auto;margin-right:auto;}
+img.alignright {padding:4px;margin:0 0 2px 7px;display:inline;}
+img.alignleft {padding:4px;margin: 0 7px 2px 0;display:inline;}
+
+select {width: 130px;}
+
+small {font-size: 0.9em;line-height: 1.5em;}
+
+
+#commentform {background:#fff;padding:16px 16px 40px;border:2px solid black;border-right-width:4px;border-bottom-width:4px;}
+#commentform h3 {margin:0px;}
+#commentform input {width: 170px;padding: 2px;margin: 5px 5px 1px 0;}
+#commentform textarea {width:452px;padding:2px;margin:8px 0px;}
+#commentform p {margin: 5px 0;}
+#commentform #submit {margin: 0;float: right;background:#fff;border:1px solid #000;font:bold 1.2em Arial;-moz-border-radius:8px;}
+
+#footer {padding:1px 0px 16px 0px;margin:0px 0px auto;width: 758px;clear: both;background:Url('images/bottom-corners.png') bottom no-repeat;}
+#footer p {width:400px;margin:0px auto;padding:32px 0px 32px 56px;text-align:center;background:Url('images/dogcow.png') no-repeat 28px 12px #fff;border:4px solid #000}
+
+#header {background:Url('images/header-image.png') #fff;margin: 0px;border-bottom:2px solid #000;padding:0px;height: 38px;width: 758px;}
+#header a:link, #header a:visited, #header a:hover, #header a:active {color:#000;text-decoration:none;}
+
+#page {margin: 20px auto;padding: 0px;width: 758px;background:Url('images/background.png');text-align: left;}
+
+#sidebar {width:190px;padding:0px;margin:16px 0px 0px 570px;text-align:center;}
+#sidebar h2 {font-size: 1.2em;}
+#sidebar ul {margin:0px;padding:0px;list-style-type:none;}
+#sidebar ul li {margin:0px;padding:0px;}
+#sidebar ul li.home_icon {margin:0px 0px 20px 0px;padding:70px 0px 6px 0px;text-align:center;background:Url('images/happy-mac.png') top center no-repeat}
+#sidebar ul li.page_item {margin:0px;padding:70px 0px 6px 0px;text-align:center;background:Url('images/text-file.png') top center no-repeat}
+#sidebar ul li.archive_item {margin:0px;padding:70px 0px 6px 0px;text-align:center;background:Url('images/folder.png') top center no-repeat}
+#sidebar ul li p {background:#fff;padding:8px;margin:12px 16px 12px 0px;border:2px solid #000;border-right-width:4px;border-bottom-width:4px;}
+#sidebar ul li p a:link, #sidebar ul li p a:visited {border:none;}
+#sidebar .categories li {margin:0px;padding:70px 0px 6px 0px;text-align:center;background:Url('images/suitcase.png') top center no-repeat}
+#sidebar a:link, #sidebar a:visited, .navigation a:link, .navigation a:visited {background:#fff;color:#000;padding:2px;font-weight:normal;font-size:1.25em;text-decoration:none;border:1px dotted #000;}
+#sidebar a:hover, #sidebar a:active, .navigation a:hover, .navigation a:active {background:#000;color:#fff;padding:2px;font-weight:normal;font-size:1.25em;text-decoration:none;border:1px dotted #fff;}
+
+#wp-calendar {empty-cells: show;margin: 10px auto 0;width: 155px;}
+#wp-calendar a {text-decoration:none;display: block;}
+#wp-calendar caption {text-align: center;width: 100%;}
+#wp-calendar td {padding: 3px 0;text-align: center;}
+#wp-calendar td.pad:hover {background-color:#fff;}
+#wp-calendar th {font-style: normal;text-transform: capitalize;}
+#wp-calendar #prev a, #wp-calendar #next a {font-size: 9pt;}
+#wp-calendar #next a {padding-right: 10px;text-align: right;}
+#wp-calendar #prev a {padding-left: 10px;text-align: left;}
+
+
+.alignleft {float: left}
+.alignright {float: right;}
+.alt {background-color:#fff;border:2px solid #000;border-right:4px solid #000;border-bottom:4px solid #000}
+
+.center {text-align: center;}
+
+
+
+.commentlist {padding:0px;text-align:justify;}
+
+.commentlist li {list-style:none;padding:0px;margin:8px 0px;}
+.commentlist li {padding:0px;}
+.commentlist li div.main {background:Url('images/comment-bg-mid.png') repeat-y bottom left;margin:0px;padding:0px 40px 20px 56px}
+.commentlist li div.commentinfo {fbgd kldisplay:block;position:relative;top:-10px;}
+.commentlist li div.end {background:Url('images/comment-bg-bottom.png') bottom left no-repeat;height:12px;}
+.commentlist li div.top {background:Url('images/comment-bg-top.png') top left no-repeat;height:34px;}
+
+.commentlist cite, .commentlist cite a {font-weight: bold;font-style: normal;font-size: 1.1em;}
+.commentlist p {margin: 0px 5px 0px 0;font-weight: normal;line-height: 1.5em;text-transform: none;}
+.commentmetadata {font-weight: normal;margin: 0;display: block;}
+
+.narrowcolumn {float: left;padding: 0 0 20px 24px;margin: 0px 0 0;width: 500px;}
+.narrowcolumn .postmetadata {padding-top: 5px;text-align:center;}
+.narrowcolumn .entry, .widecolumn .entry { line-height: 1.4em; }
+
+.navigation {display:block;text-align:center;margin-top:0px;margin-bottom:40px;height:64px;}
+.navigation .navigation_icon {margin:0px;padding:70px 0px 6px 0px;text-align:center;background:Url('images/text-file.png') top center no-repeat}
+
+.nocomments {text-align: center;margin: 0;padding: 0;}
+
+.post {background:Url('images/post-bg.png') bottom right no-repeat #fff;padding:0px;border:2px solid #000;border-right:4px solid #000;border-bottom:4px solid #000;margin: 16px 0px;text-align: justify;}
+.post .entry {padding:8px 44px 28px 12px;margin:0px;background:Url('images/post-topright.png') top right no-repeat;}
+.post .entry p {margin:0px 0px 12px 0px;}
+
+.post h2 {font-size: 1.6em;letter-spacing:-1px;margin:0px;height:34px;background:Url('images/titlebar-bg.png') no-repeat;text-align:center;border-bottom:2px solid #000;}
+.post h2 a, .post h2 a:link, .post h2 a:visited, .post h2 a:hover, .post h2 a:active {text-decoration:none;background:#fff;padding:5px 8px;line-height:34px;color:#000}
+
+.post small {display:block;text-align:left;padding:3px 8px 3px 8px;border-bottom:6px double #000;color:#000;font-weight:bold;font-size:0.95em;background:#fff}
+
+.postmetadata {clear: left;}
+.postmetadata ul, .postmetadata li {display: inline;list-style-type: none;list-style-image: none;}
+
+.widecolumn {padding: 10px 0 20px 0;margin: 5px 0 0 150px;width: 450px;line-height: 1.6em;}
+.widecolumn .attachment {text-align: center;margin: 5px 0px;}
+.widecolumn .entry p {font-size:1.05em;}
+.widecolumn .post {margin: 0px;}
+.widecolumn .smallattachment {text-align: center;float: left;width: 128px;margin: 5px 5px 5px 0px;}

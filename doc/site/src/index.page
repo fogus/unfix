@@ -1,0 +1,25 @@
+---
+title: Unfix Readme
+---
+
+**unfix** - A library for unfixing common Clojure complaints
+
+1. Prefix notation
+2. Parentheses
+
+--- name:infix
+
+    (infix 1 + 2 * 3)
+    ;=> 7
+    
+    (infix [1 + 2] * 3)
+    ;=> 9
+
+--- name:postfix
+
+    (postfix 1 2 3 * +)
+    ;=> [7]
+
+    (postfix 3 2 1 + *)
+    ;=> [9]
+
