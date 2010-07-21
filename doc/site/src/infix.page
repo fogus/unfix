@@ -5,7 +5,7 @@ filename: infix.txt
 
 ---
 
-Are you tired of your parentheses being in the wrong place?  [unfix][u]&copy; can help!
+Are you tired of your parentheses being in the wrong place?  [unfix][u]&trade; can help!
 
 Observe the following Java code:
 
@@ -45,7 +45,7 @@ Compared the `Hamster` class to the following code run in a Clojure REPL:
     (println "Values:" (vals a-map))
     Values: (unfix joke Joy of Clojure)
 
-Did you see that?!  Did you see what happened?  The `System.out.println(...)` call is replaced by `(println ...)`.  **The opening parenthesis is in the wrong place!**  This is known as prefix notation, and it's circumstances like this where [unfix][u]&copy; can help.  Prefix notation is especially prominent in mathematical equations, something that every application is filled to the brim with:
+Did you see that?!  Did you see what happened?  The `System.out.println(...)` call is replaced by `(println ...)`.  **The opening parenthesis is in the wrong place!**  This is known as prefix notation, and it's circumstances like this where [unfix][u]&trade; can help.  Prefix notation is especially prominent in mathematical equations, something that every application is filled to the brim with:
 
     (defn slope [[x0 y0] [x1 y1]]
       (float (/ (- y1 y0) 
@@ -54,7 +54,7 @@ Did you see that?!  Did you see what happened?  The `System.out.println(...)` ca
     (slope [4 15] [3 21])
     ;=> -6.0
 
-The form of the `slope` function looks very different than the form from those high-school classes that we never paid attention in, but [unfix][u]&copy; can unfix that:
+The form of the `slope` function looks very different than the form from those high-school classes that we never paid attention in, but [unfix][u]&trade; can unfix that:
 
     (defn slope-unfixed [[x0 y0] [x1 y1]]
       (float
@@ -63,7 +63,7 @@ The form of the `slope` function looks very different than the form from those h
     (slope-unfixed [4 15] [3 21])
     ;=> -6.0
 
-Using [unfix][u]&copy;'s alien technology, affectionately known as infix&reg; notation, you can relive the glory days.
+This is possible using [unfix][u]&trade;'s alien technology, affectionately known as infix&reg; notation.
 
 There, all unbetter!&reg;
 

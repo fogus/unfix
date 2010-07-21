@@ -5,7 +5,7 @@ template: /doc.template
 ---
 
 <ul>
-  <li class="page_item"><a href="infix.html">Unfixing Prefix Notation</a></li>
-  <li class="page_item"><a href="postfix.html">Unfixing Parentheses</a></li>
+  <li class="page_item"><a href="infix.html">Unfix&trade;ing Prefix Notation</a></li>
+  <li class="page_item"><a href="postfix.html">Unfix&trade;ing Parentheses</a></li>
 </ul>
 

@@ -31,7 +31,7 @@ template: ~
     <ul>
       <li class="home_icon"><a href="http://github.com/fogus/unfix">source</a></li>
       <li class="home_icon"><a href="http://github.com/fogus/unfix/issues">tickets</a></li>
-      <li class="home_icon"><a href="http://github.com/fogus/unfix/wikis">wiki</a></li>
+      <li class="home_icon"><a href="http://clojars.org/unfix">jar</a></li>
       <li class="archive_item"><a href="docs.html">docs</a></li>
     </ul>
   </div>

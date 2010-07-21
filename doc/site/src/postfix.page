@@ -5,26 +5,26 @@ filename: postfix.txt
 
 ---
 
-Are you completely tired of parentheses? [unfix][u]&copy; can help!
+Are you completely tired of parentheses? [unfix][u]&trade; can help!
 
 Observe the following Clojure code:
 
     (- (+ 5 (* 4 (+ 1 2))) 3)
     ;=> 14
 
-That sure is a lot of parentheses for such a simple formula.  Thankfully, using unfix&copy;'s patented infix&reg; technology, we can clean it up a bit:
+That sure is a lot of parentheses for such a simple formula.  Thankfully, using unfix&trade;'s patented infix&reg; technology, we can clean it up a bit:
 
     (infix 
       5 + [[1 + 2] * 4] - 3)
     ;=> 14
 
-However, there are still parenthesis-like things used that are quite disorienting.  [unfix][u]&copy; to the rescue again:
+However, there are still parenthesis-like things used that are quite disorienting.  [unfix][u]&trade; to the rescue again:
 
     (postfix
       5 1 2 + 4 * + 3 -)
     ;=> [14]
 
-Amazingly, every single parentheses and parenthesis-like things have disappeared in a puff of Charles Leonard Hamblin's pipe smoke!  Using [unfix][u]&copy;'s patented[^pat] postfix&reg;, technology you can drastically reduce your reliance on parentheses and parenthesis-like things:
+Amazingly, every single parentheses and parenthesis-like things have disappeared in a puff of Charles Leonard Hamblin's pipe smoke!  Using [unfix][u]&trade;'s patented[^pat] postfix&reg;, technology you can drastically reduce your reliance on parentheses and parenthesis-like things:
 
     (postfix "There" ", " "all " "unbetter" str str str)
     ;=> ["There, all unbetter"]
