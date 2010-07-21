@@ -33,6 +33,8 @@ template: ~
       <li class="home_icon"><a href="http://github.com/fogus/unfix/issues">tickets</a></li>
       <li class="home_icon"><a href="http://clojars.org/unfix">jar</a></li>
       <li class="archive_item"><a href="docs.html">docs</a></li>
+      <li class="page_item"><a href="infix-src.html">infix.clj</a></li>
+      <li class="page_item"><a href="postfix-src.html">postfix.clj</a></li>
     </ul>
   </div>
 

@@ -1,0 +1,29 @@
+---
+title: Unifx src
+template: /unfix.template
+filename: infix.clj
+
+---
+
+<pre><code>(ns joy.unfix.infix)
+
+(def && #(and % %2))
+(def || #(or  % %2))
+
+(def *rank* (zipmap [- + * / < > && || =] 
+                    (iterate inc 1)))
+    
+(defn- infix* 
+  [[a b & [c d e & m]]]
+  (cond
+   (vector? a) (recur (list* (infix* a) b c d e m))
+   (vector? c) (recur (list* a b (infix* c) d e m))
+   (ifn? b) (if (and d (< (*rank* b 0) (*rank* d 0)))
+             (recur (list a b (infix* (list* c d e m))))
+             (recur (list* (b a c) d e m)))
+   :else a))
+    
+(defn infix [& args]
+  (infix* args))
+
+</code></pre>

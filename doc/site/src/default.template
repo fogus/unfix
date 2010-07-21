@@ -30,13 +30,13 @@
       </div>
     </div>
     <div class="post" id="infix-ex">
-      <h2><a href="TODO" rel="bookmark" title="TODO">infix.clj</a></h2>
+      <h2><a href="TODO" rel="bookmark" title="TODO">infix-example.clj</a></h2>
       <div class="entry">
         <webgen:block name="infix"/>
       </div>
     </div>
     <div class="post" id="postfix-ex">
-      <h2><a href="TODO" rel="bookmark" title="TODO">postfix.clj</a></h2>
+      <h2><a href="TODO" rel="bookmark" title="TODO">postfix-example.clj</a></h2>
       <div class="entry">
         <webgen:block name="postfix"/>
       </div>
@@ -49,6 +49,8 @@
       <li class="home_icon"><a href="http://github.com/fogus/unfix/issues">tickets</a></li>
       <li class="home_icon"><a href="http://clojars.org/unfix">jar</a></li>
       <li class="archive_item"><a href="docs.html">docs</a></li>
+      <li class="page_item"><a href="infix-src.html">infix.clj</a></li>
+      <li class="page_item"><a href="postfix-src.html">postfix.clj</a></li>
     </ul>
   </div>
 
