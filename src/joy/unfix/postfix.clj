@@ -1,7 +1,7 @@
 (ns joy.unfix.postfix)
 
 (defn- postfix*
-  ([tokens] (rpn tokens []))
+  ([tokens] (postfix* tokens []))
   ([[top & tail] stack]
      (if top
        (if (fn? top)

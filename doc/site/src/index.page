@@ -7,6 +7,12 @@ title: Unfix Readme
 1. Prefix notation
 2. Parentheses
 
+    (use joy.unfix.infix)
+
+    (use joy.unfix.postfix)
+
+There, all unbetter!&reg;
+
 --- name:infix
 
     (infix 1 + 2 * 3)
@@ -22,4 +28,3 @@ title: Unfix Readme
 
     (postfix 3 2 1 + *)
     ;=> [9]
-

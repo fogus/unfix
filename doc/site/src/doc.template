@@ -1,10 +1,14 @@
---- pipeline:erb,tags,blocks,head,xmllint
+---
+title: docs template
+template: ~
+---
+
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{lang:}">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Unfix Home</title>
+    <title>Unfix Documentation</title>
     <meta name="description" content="Unfix - an n-fix library for Clojure"/>
     <meta name="keywords" content="clojure,lisp,infix,unfix,programming"/>
     <meta name="author" content="Fogus"/>
@@ -19,28 +23,8 @@
   <div id="header"><h1><a href="{relocatable: index.html}">unfix</a></h1></div>
   <hr />
 
-  <div id="frame" class="narrowcolumn">
-    <div class="post" id="readme">
-      <h2><a href="TODO" rel="bookmark" title="TODO">readme.1st</a></h2>
-      <div class="entry">
-        <webgen:block name="content"/>
-        <p class="postmetadata alt">
-	  For more information, view the unfix <a href="docs.html">documentation</a>.
-        </p>
-      </div>
-    </div>
-    <div class="post" id="infix-ex">
-      <h2><a href="TODO" rel="bookmark" title="TODO">infix.clj</a></h2>
-      <div class="entry">
-        <webgen:block name="infix"/>
-      </div>
-    </div>
-    <div class="post" id="postfix-ex">
-      <h2><a href="TODO" rel="bookmark" title="TODO">postfix.clj</a></h2>
-      <div class="entry">
-        <webgen:block name="postfix"/>
-      </div>
-    </div>
+  <div id="documents" class="narrowcolumn">
+    <webgen:block name="content"/>
   </div>
 
   <div id="sidebar">

@@ -1,0 +1,72 @@
+---
+title: Unifx docs
+template: /unfix.template
+filename: infix.txt
+
+---
+
+Are you tired of your parentheses being in the wrong place?  [unfix][u]&copy; can help!
+
+Observe the following Java code:
+
+    import java.util.Map;
+    import java.util.HashMap;
+    
+    public class Hamster {
+        public static void main(String[] args) {
+            Map<String, String> aMap = 
+              new HashMap<String, String>() {{
+                put("library", "unfix");
+                put("isa", "joke");
+                put("book", "Joy of Clojure");
+            }};
+    
+            StringBuilder sb = new StringBuilder("(");
+            for (String k : aMap.values()) {
+                sb.append(k);
+                sb.append(" ");
+            }
+            sb.replace(sb.length()-1, sb.length(), ")");
+    
+            System.out.println("Values: " + sb.toString());
+        }
+    }
+
+Save this source in a file named `Hamster.java`, and compile it with `javac Hamster.java`.  Finally, run it with the command `java Hamster` to see:
+
+    Values: (Joy of Clojure joke unfix)
+
+Compared the `Hamster` class to the following code run in a Clojure REPL:
+
+    (def a-map {"library" "unfix"
+                "isa" "joke"
+                "book", "Joy of Clojure"})
+    
+    (println "Values:" (vals a-map))
+    Values: (unfix joke Joy of Clojure)
+
+Did you see that?!  Did you see what happened?  The `System.out.println(...)` call is replaced by `(println ...)`.  **The opening parenthesis is in the wrong place!**  This is known as prefix notation, and it's circumstances like this where [unfix][u]&copy; can help.  Prefix notation is especially prominent in mathematical equations, something that every application is filled to the brim with:
+
+    (defn slope [[x0 y0] [x1 y1]]
+      (float (/ (- y1 y0) 
+                (- x1 x0))))
+    
+    (slope [4 15] [3 21])
+    ;=> -6.0
+
+The form of the `slope` function looks very different than the form from those high-school classes that we never paid attention in, but [unfix][u]&copy; can unfix that:
+
+    (defn slope-unfixed [[x0 y0] [x1 y1]]
+      (float
+        (infix [y1 - y0] / [x1 - x0])))
+    
+    (slope-unfixed [4 15] [3 21])
+    ;=> -6.0
+
+Using [unfix][u]&copy;'s alien technology, affectionately known as infix&reg; notation, you can relive the glory days.
+
+There, all unbetter!&reg;
+
+[back to docs...](docs.html)
+
+[u]: http://fogus.me/fun/unfix/
