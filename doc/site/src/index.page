@@ -4,12 +4,13 @@ title: Unfix Readme
 
 **unfix**&trade; - A library for unfixing common Clojure complaints
 
-1. Prefix notation
-2. Parentheses
+**Prefix notation**
 
-    (use joy.unfix.infix)
+    (use 'joy.unfix.infix)
 
-    (use joy.unfix.postfix)
+**Parentheses**
+
+    (use 'joy.unfix.postfix)
 
 There, all unbetter!&reg;
 
