@@ -1,17 +1,8 @@
 (ns joy.unfix.postfix)
 
-(defn- postfix*
-  ([tokens] (postfix* tokens []))
-  ([[top & tail] stack]
-     (if top
-       (if (fn? top)
-         (let [l (peek stack)
-               s (pop stack)
-               r (peek s)]
-           (recur tail (conj (pop s) (top r l))))
-         (recur tail (conj stack top)))
-       stack)))
+(defn postfix [& e]
+  (reduce #(if (fn? %2)
+             (let [[l r & m]%]
+               (cons (%2 r l) m))
+             (cons %2 %))[]e))
 
-(defn postfix 
-  [& args]
-  (postfix* args))
