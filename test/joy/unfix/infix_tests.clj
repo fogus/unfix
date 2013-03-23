@@ -20,3 +20,6 @@
   (test/is (all-eq? 3 3 3))
   (test/is (not (all-eq? 1 2 3))))
 
+(test/deftest test-infix-reader
+  (test/is (= '(+ 2 (* 3 4))
+              (read-string "#joy/infix [2 + 3 * 4]"))))

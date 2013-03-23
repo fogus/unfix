@@ -27,7 +27,6 @@
 
 (comment
 
-  (binding [*data-readers* {'joy/infix #'joy.unfix.infix/infix-reader}]
-    (read-string "#joy/infix [2 + 3 * 4]"))
+  
 
 )
