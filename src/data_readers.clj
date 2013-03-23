@@ -1,1 +1,1 @@
-{joy/infix joy.unfix.infix*}
+{joy/infix joy.unfix.infix/infix-reader}

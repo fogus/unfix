@@ -17,7 +17,17 @@
                  (recur (list a b (infix* (list* c d e more))))
                  (recur (list* (list (_ b) a c) d e more)))
    :else a))
-    
+
+(defn infix-reader [form]
+  (binding [_ identity]
+    (infix* form)))
+
 (defmacro infix [& args]
   (infix* args))
 
+(comment
+
+  (binding [*data-readers* {'joy/infix #'joy.unfix.infix/infix-reader}]
+    (read-string "#joy/infix [2 + 3 * 4]"))
+
+)
