@@ -4,3 +4,5 @@ unfix.jar
 webgen.cache
 doc/site/out
 .DS_Store
+.lein*
+target
