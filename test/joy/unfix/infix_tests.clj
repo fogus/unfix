@@ -22,4 +22,5 @@
 
 (test/deftest test-infix-reader
   (test/is (= '(+ 2 (* 3 4))
-              (read-string "#joy/infix [2 + 3 * 4]"))))
+              (read-string "#joy/infix [2 + 3 * 4]")))
+  (test/is (= 14 (eval #joy/infix [2 + 3 * 4]))))
