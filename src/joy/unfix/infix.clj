@@ -48,6 +48,17 @@
 
 ;; l->r like smalltalk
 
+(defn l->rfix
+  ([a op b]              (op a b))
+  ([a op1 b op2 c]       (op2 c (op1 a b)))
+  ([a op1 b op2 c op3 d] (op3 d (op2 c (op1 a b)))))
+
+(l->rfix 1 + 2 + 3)
+;;=> 6
+
+(l->rfix 1 + 2 * 3)
+;;=> 9 ( 7 in JS )
+
 ;; math-like precedence
 
 (comment
