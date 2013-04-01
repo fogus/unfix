@@ -26,15 +26,6 @@
   (infix* args))
 
 
-(defn- fix
-  [[a b & [c d e & m]]]
-  (cond
-   (vector? a) (recur (list* (fix a) b c d e m))
-   (vector? c) (recur (list* a b (fix c) d e m))
-   (ifn? b) (recur (list* (b a c) d e m))
-   (recur (list a b (fix (list* c d e m))))
-   :else a))
-
 (defn fix
   ([x op y] (op x y))
   ([x op1 y op2 z] (op1 x (op2 y z))))  ;; r->l like apl
