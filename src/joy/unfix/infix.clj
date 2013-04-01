@@ -61,3 +61,18 @@
 
 ;; math-like precedence
 
+(def order {+ 0   - 0
+            * 1   / 1})
+
+(defn infix3
+  [a op1 b op2 c]
+  (if (< (get order op1) (get order op2))
+    (r->lfix a op1 b op2 c)
+    (l->rfix a op1 b op2 c)))
+
+(infix3 1 + 2 * 3)
+;;=> 7
+
+(infix3 10 * 2 + 3)
+;;=> 23
+
