@@ -26,9 +26,25 @@
   (infix* args))
 
 
-(defn fix
-  ([x op y] (op x y))
-  ([x op1 y op2 z] (op1 x (op2 y z))))  ;; r->l like apl
+;; r->l like apl
+
+(defn r->lfix
+  ([a op b]              (op a b))
+  ([a op1 b op2 c]       (op1 a (op2 b c)))
+  ([a op1 b op2 c op3 d] (op1 a (op2 b (op3 c d)))))
+
+(r->lfix 1 + 2)
+;;=> 3
+
+(r->lfix 1 + 2 + 3)
+;;=> 6
+
+(r->lfix 1 + 2 * 3)
+;;=> 7
+
+(r->lfix 10 * 2 + 3)
+;;=> 50 ( 23 in js )
+
 
 ;; l->r like smalltalk
 
@@ -36,9 +52,4 @@
 
 (comment
 
-  (fix 1 + 2)
-
-  (fix 1 + 2 + 3)
-  (fix 1 + 2 * 3)
-  (fix 1 * 2 + 3)
 )
