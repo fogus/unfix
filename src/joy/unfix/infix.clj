@@ -4,7 +4,7 @@
 (def || #(or    %1 %2))
 (def != #(not=  %1 %2))
 
-(def ^:dynamic *ops* '[- + * / < > && || = !=])
+(def ^:dynamic *ops* '[|| && < > = != - + * /])
 (def rank (zipmap *ops* (iterate inc 1)))
 (def ^:dynamic _ clojure.core/resolve)
 
