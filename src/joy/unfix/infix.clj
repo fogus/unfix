@@ -9,7 +9,8 @@
 (def ^:dynamic _ clojure.core/resolve)
 
 (defn- infix* 
-  [[a b & [c d e & more] :as v]]
+  [[a b c & [d e & more] :as v]]
+  ;(println "DEBUG: " v)
   (cond
    (vector? a) (recur (list* (infix* a) b c d e more))
    (vector? c) (recur (list* a b (infix* c) d e more))
