@@ -8,9 +8,28 @@
 (def rank (zipmap *ops* (iterate inc 1)))
 (def ^:dynamic _ clojure.core/resolve)
 
+(defn infix-helper
+   [op [a & [b c & more] :as v]]
+   (println "DEBUG0: " v)
+   (cond
+      (or (nil? b) (nil? c)) a
+      (= b op) (recur op [(list (_ b) a c) more])
+      (nil? more) [a b c]
+      :else [a b (infix-helper op (conj more c))]  )  )
+      
+;   (if
+;      (= op b)
+;      (recur op (list (b a c) more))
+;      (list a b (infix-helper op (c more)))  )  )
+
+;(defn- infix**
+;   [v]
+;   (cond
+;))
+
 (defn- infix* 
   [[a b c & [d e & more] :as v]]
-  ;(println "DEBUG: " v)
+  (println "DEBUG: " v)
   (cond
    (vector? a) (recur (list* (infix* a) b c d e more))
    (vector? c) (recur (list* a b (infix* c) d e more))
