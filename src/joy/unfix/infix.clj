@@ -8,24 +8,29 @@
 (def rank (zipmap *ops* (iterate inc 1)))
 (def ^:dynamic _ clojure.core/resolve)
 
+(defmacro debug-helper
+   [tag expr & [msg]]
+  `(if
+      (nil? ~msg)
+      (do (printf "DEBUG(%s)\n" ~tag) ~expr)
+      (printf "DEBUG(%s): %s\n" ~tag ~msg)  )  )
+
 (defn infix-helper
    [op [a & [b c & more] :as v]]
-   (println "DEBUG0: " v)
+   (debug-helper 0 nil (str v))
    (cond
-      (or (nil? b) (nil? c)) a
-      (= b op) (recur op [(list (_ b) a c) more])
-      (nil? more) [a b c]
-      :else [a b (infix-helper op (conj more c))]  )  )
-      
-;   (if
-;      (= op b)
-;      (recur op (list (b a c) more))
-;      (list a b (infix-helper op (c more)))  )  )
+      (and (nil? b) (nil? c)) (debug-helper 1 a)
+      (or  (nil? b) (nil? c)) (debug-helper 2 a) ; footnote 1
+      (= b op) (debug-helper 3 (recur op (list (list (_ b) a c) more)))
+      (nil? more) (debug-helper 4 (list a b c))
+      :else (debug-helper 5 (list* a b (infix-helper op (list* c more))))  )  )
 
-;(defn- infix**
-;   [v]
-;   (cond
-;))
+; Footnote 1:
+;
+; In the long-term, this should return an error.  But I haven't
+; decided how I want to do that yet, so for now I'm just concentrating
+; on getting the core logic working properly (and only testing on
+; well-formed inputs until then).
 
 (defn- infix* 
   [[a b c & [d e & more] :as v]]
