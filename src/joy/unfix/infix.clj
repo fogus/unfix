@@ -31,7 +31,10 @@
                (map
                  #(sliding-window % equation)
                   (filter even? (range (- (count equation) 1)))  )  )  )  ]
-      (concat front (cons (list (_ op) x y) back))  )  )
+      (if
+         (nil? op)
+         equation
+         (recur testop (concat front (cons (list (_ op) x y) back)))  )  )  )
 
 (defn- infix* 
   [[a b c & [d e & more] :as v]]
