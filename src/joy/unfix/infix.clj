@@ -12,22 +12,18 @@
    [tag expr]
   `(do (printf "DEBUG(%s) %s\n" ~tag ~expr) ~expr)  )
 
-(defn infix-helper
-   [op [a & [b c & more] :as v]]
-   (debug-helper 0 v)
-   (cond
-      (and (nil? b) (nil? c)) (debug-helper 1 a)
-      (or  (nil? b) (nil? c)) (debug-helper 2 a) ; footnote 1
-      (= b op) (debug-helper 3 (infix-helper op (list (list (_ b) a c) more)))
-      (nil? more) (debug-helper 4 (list a b c))
-      :else (debug-helper 5 (list* a b (infix-helper op (list* c more))))  )  )
+(defn sliding-window
+   [offset symlist]
+   (list
+      (take offset symlist)
+      (take 3 (drop offset symlist))
+      (drop (+ 3 offset) symlist)  )  )
 
-; Footnote 1:
-;
-; In the long-term, this should return an error.  But I haven't
-; decided how I want to do that yet, so for now I'm just concentrating
-; on getting the core logic working properly (and only testing on
-; well-formed inputs until then).
+(defn infix-helper
+   [equation]
+   (map
+     #(sliding-window % equation)
+      (filter even? (range (- (count equation) 1)))  )  )
 
 (defn- infix* 
   [[a b c & [d e & more] :as v]]
