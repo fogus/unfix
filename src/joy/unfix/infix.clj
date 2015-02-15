@@ -9,15 +9,12 @@
 (def ^:dynamic _ clojure.core/resolve)
 
 (defmacro debug-helper
-   [tag expr & [msg]]
-  `(if
-      (nil? ~msg)
-      (do (printf "DEBUG(%s)\n" ~tag) ~expr)
-      (printf "DEBUG(%s): %s\n" ~tag ~msg)  )  )
+   [tag expr]
+  `(do (printf "DEBUG(%s) %s\n" ~tag ~expr) ~expr)  )
 
 (defn infix-helper
    [op [a & [b c & more] :as v]]
-   (debug-helper 0 nil (str v))
+   (debug-helper 0 v)
    (cond
       (and (nil? b) (nil? c)) (debug-helper 1 a)
       (or  (nil? b) (nil? c)) (debug-helper 2 a) ; footnote 1
