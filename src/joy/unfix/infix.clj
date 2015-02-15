@@ -21,7 +21,7 @@
    (cond
       (and (nil? b) (nil? c)) (debug-helper 1 a)
       (or  (nil? b) (nil? c)) (debug-helper 2 a) ; footnote 1
-      (= b op) (debug-helper 3 (recur op (list (list (_ b) a c) more)))
+      (= b op) (debug-helper 3 (infix-helper op (list (list (_ b) a c) more)))
       (nil? more) (debug-helper 4 (list a b c))
       :else (debug-helper 5 (list* a b (infix-helper op (list* c more))))  )  )
 
