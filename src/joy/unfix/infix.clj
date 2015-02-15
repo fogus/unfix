@@ -19,11 +19,16 @@
       (take 3 (drop offset symlist))
       (drop (+ 3 offset) symlist)  )  )
 
-(defn infix-helper
-   [equation]
-   (map
-     #(sliding-window % equation)
-      (filter even? (range (- (count equation) 1)))  )  )
+(defn first-testop
+   [testop equation]
+   (first
+      (filter
+        #(let
+            [  [front [x op y] back] %  ]
+            (= op testop)  )
+         (map
+           #(sliding-window % equation)
+            (filter even? (range (- (count equation) 1)))  )  )  )  )
 
 (defn- infix* 
   [[a b c & [d e & more] :as v]]
