@@ -29,5 +29,4 @@ Though the following equivalent expression works just fine:
 
 Both cases fail for similar reasons.
 
-I should probably add these to the unit tests, but I haven't gotten around to
-that yet.
+These cases have been added to the unit tests.
