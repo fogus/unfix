@@ -34,10 +34,10 @@
       (if
          (nil? op)
          equation
-         (recur testop (concat front (cons (list (_ op) x y) back)))  )  )  )
+         (recur testop (concat front (list* (list (_ op) x y) back)))  )  )  )
 
 (defn- infix* 
-  [[a b c & [d e & more] :as v]]
+  [[a b & [c d e & more] :as v]]
   (println "DEBUG: " v)
   (cond
    (vector? a) (recur (list* (infix* a) b c d e more))
