@@ -37,22 +37,22 @@
          (recur testop (concat front (list* (list (_ op) x y) back)))  )  )  )
 
 (defn apply-oplist
-   [equation [testop & oplist]]
+   [  [testop & oplist] equation]
    (if
-      (empty? oplist)
+      (nil? testop)
       equation
-      (recur (infix-helper testop equation) oplist)  )  )
+      (recur oplist (infix-helper testop equation))  )  )
 
 (defn infix**
    [equation]
-   (apply-oplist equation '(/ * - + != = > < && ||))  )
+   (apply-oplist '(/ * - + != = > < && ||) equation)  )
 
 (comment
    (map
      #(if
          (vector? %)
          (infix** %)  )
-      (apply-oplist equation '(/ * - + != = > < && ||))  )  )
+      (apply-oplist '(/ * - + != = > < && ||) equation)  )  )
 
 (defn- infix*
   [[a b & [c d e & more] :as v]]
