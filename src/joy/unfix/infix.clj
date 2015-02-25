@@ -37,13 +37,11 @@
          (recur testop (concat front (list* (list (_ op) x y) back)))  )  )  )
 
 (defn apply-oplist
-   [equation oplist]
+   [equation [testop & oplist]]
    (if
       (empty? oplist)
       equation
-      (recur
-         (infix-helper (first oplist) equation)
-         (rest oplist)  )  )  )
+      (recur (infix-helper testop equation) oplist)  )  )
 
 (defn infix**
    [equation]
