@@ -47,7 +47,9 @@
 
 (defn infix**
    [equation]
-   (println "DEBUG: " equation)
+   (apply-oplist equation '(/ * - + != = > < && ||))  )
+
+(comment
    (map
      #(if
          (vector? %)
