@@ -37,22 +37,27 @@
          (recur testop (concat front (list* (list (_ op) x y) back)))  )  )  )
 
 (defn apply-oplist
-   [  [testop & oplist] equation]
+   [  [testop & oplist] equation  ]
    (if
       (nil? testop)
       equation
       (recur oplist (infix-helper testop equation))  )  )
 
+; This seems to work for nested vectors, but I should probably
+; generalize this to nesting of all sequences.  Also, there's a little
+; weirdness in the way it inserts extra (unnecessary?) parentheses in
+; the final expression.
+
 (defn infix**
    [equation]
-   (apply-oplist '(/ * - + != = > < && ||) equation)  )
-
-(comment
-   (map
-     #(if
-         (vector? %)
-         (infix** %)  )
-      (apply-oplist '(/ * - + != = > < && ||) equation)  )  )
+   (apply-oplist
+     '(/ * - + != = > < && ||)
+      (map
+        #(if
+            (vector? %)
+            (infix** %)
+            %  )
+         equation  )  )  )
 
 (defn- infix*
   [[a b & [c d e & more] :as v]]
