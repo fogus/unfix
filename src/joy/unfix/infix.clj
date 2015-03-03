@@ -19,15 +19,17 @@
       (take 3 (drop offset symlist))
       (drop (+ 3 offset) symlist)  )  )
 
+(defn test-for-operator
+   [  testop [front [x op y] back]  ]
+   (= op testop)  )
+
 (defn infix-helper
    [testop equation]
    (let
       [  [front [x op y] back]
          (first
             (filter
-              #(let
-                  [  [front [x op y] back] %  ]
-                  (= op testop)  )
+              #(test-for-operator testop %)
                (map
                  #(sliding-window % equation)
                   (filter even? (range (- (count equation) 1)))  )  )  )  ]
@@ -46,22 +48,24 @@
 ; This seems to work for nested vectors, but I should probably
 ; generalize this to nesting of all sequences.  Also, there's a little
 ; weirdness in the way it inserts extra (unnecessary?) parentheses in
-; the final expression.
+; the final expression.  Update: Duh, since it's a list within another
+; layer of unnecessary list, the desired list is just the first
+; element of the outer list.
 
 (defn infix**
    [equation]
-   (apply-oplist
-     '(/ * - + != = > < && ||)
-      (map
-        #(if
-            (vector? %)
-            (infix** %)
-            %  )
-         equation  )  )  )
+   (first
+      (apply-oplist
+        '(/ * - + != = > < && ||)
+         (map
+           #(if
+               (vector? %)
+               (infix** %)
+               %  )
+            equation  )  )  )  )
 
 (defn- infix*
   [[a b & [c d e & more] :as v]]
-  (println "DEBUG: " v)
   (cond
    (vector? a) (recur (list* (infix* a) b c d e more))
    (vector? c) (recur (list* a b (infix* c) d e more))
