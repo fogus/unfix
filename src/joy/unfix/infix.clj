@@ -27,7 +27,7 @@
    "We don't care about most of the args here (only op and testop), so
    the rest can be ignored.  All the same, I thought it was best to
    move this into a separate helper function, to avoid potential
-   naming conflicts (even if they are lexically scoped).
+   naming conflicts (even if they are lexically scoped)."
    [testop [front [x op y] back]]
    (= op testop)  )
 
@@ -74,7 +74,7 @@
          (map
            #(if
                (vector? %)
-               (infix** %)
+               (infix* %)
                %  )
             equation  )  )  )  )
 
