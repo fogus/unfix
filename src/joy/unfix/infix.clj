@@ -13,6 +13,10 @@
   `(do (printf "DEBUG(%s) %s\n" ~tag ~expr) ~expr)  )
 
 (defn sliding-window
+   "I feel like I'm probably re-inventing the wheel here with this
+   sliding-window function.  It seems like something that I ought to
+   be able to do in one line of Clojure, with the help of its built-in
+   primitives."
    [offset symlist]
    (list
       (take offset symlist)
@@ -20,10 +24,21 @@
       (drop (+ 3 offset) symlist)  )  )
 
 (defn test-for-operator
-   [  testop [front [x op y] back]  ]
+   "We don't care about most of the args here (only op and testop), so
+   the rest can be ignored.  All the same, I thought it was best to
+   move this into a separate helper function, to avoid potential
+   naming conflicts (even if they are lexically scoped).
+   [testop [front [x op y] back]]
    (= op testop)  )
 
 (defn infix-helper
+   "This is intended to tackle one operator at a time in the
+   expression, only moving on to the next operator in the precedence
+   list when all of the current one has been dealt with (that part is
+   handled by apply-oplist).  It feels like this could be much simpler
+   as a map (rather than the recurrence that it currently is); but I
+   couldn't figure-out how to make that work, with the overlapping
+   windows (which makes things order-dependent, left-to-right)."
    [testop equation]
    (let
       [  [front [x op y] back]
@@ -39,6 +54,9 @@
          (recur testop (concat front (list* (list (_ op) x y) back)))  )  )  )
 
 (defn apply-oplist
+   "Here we go through the list of operators, and pick-off one at a
+   time.  This is invoked recursively by infix* for each
+   sub-expression."
    [  [testop & oplist] equation  ]
    (if
       (nil? testop)
@@ -46,13 +64,9 @@
       (recur oplist (infix-helper testop equation))  )  )
 
 ; This seems to work for nested vectors, but I should probably
-; generalize this to nesting of all sequences.  Also, there's a little
-; weirdness in the way it inserts extra (unnecessary?) parentheses in
-; the final expression.  Update: Duh, since it's a list within another
-; layer of unnecessary list, the desired list is just the first
-; element of the outer list.
+; generalize this to nesting of all sequences.
 
-(defn infix**
+(defn- infix*
    [equation]
    (first
       (apply-oplist
@@ -64,7 +78,7 @@
                %  )
             equation  )  )  )  )
 
-(defn- infix*
+(defn- infix**
   [[a b & [c d e & more] :as v]]
   (cond
    (vector? a) (recur (list* (infix* a) b c d e more))
