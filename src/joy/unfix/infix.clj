@@ -78,6 +78,13 @@
                %  )
             equation  )  )  )  )
 
+(defn infix-func [& args]
+   "This is a heavy-handed approach, but I want to be able to pass in
+   a set of args that are already in a list.  (I don't know why that
+   doesn't work already with the existing macro, since my
+   implementation should handle nested expressions.)"
+   (eval (infix* (first args)))  )
+
 (defn- infix**
   [[a b & [c d e & more] :as v]]
   (cond
