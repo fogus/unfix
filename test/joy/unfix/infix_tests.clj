@@ -24,3 +24,12 @@
   (test/is (= '(+ 2 (* 3 4))
               (read-string "#joy/infix [2 + 3 * 4]")))
   (test/is (= 14 (eval #joy/infix [2 + 3 * 4]))))
+
+(test/deftest operator-precedence
+  (test/is (= -1 (infix 1 - 2 * 3 + 4)))
+  (test/is (= -7 (infix 1 + 2 * 3 - 4 * 5 + 6)))  )
+
+(test/deftest type-casting
+  (test/is (= true (infix 1 + 3 * 2 = 7)))
+  (test/is (= true (infix 7 = 1 + 3 * 2)))
+  (test/is (= false (infix 1 + 2 = 3 * 4)))  )
