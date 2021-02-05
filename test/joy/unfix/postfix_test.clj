@@ -1,4 +1,4 @@
-(ns joy.unfix.postfix-tests
+(ns joy.unfix.postfix-test
   (:use [clojure.test :only [deftest is]])
   (:use [joy.unfix.postfix :only [postfix]]))
 

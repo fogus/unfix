@@ -20,4 +20,6 @@ via Maven:
       <version>1.0</version>
     </dependency>
 
+Testing: `clj -A:test`
+
 More information can be found at the [official unfix site](http://fogus.me/fun/unfix)

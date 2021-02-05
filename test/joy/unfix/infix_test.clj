@@ -1,4 +1,4 @@
-(ns joy.unfix.infix-tests
+(ns joy.unfix.infix-test
   (:require [clojure.test :as test])
   (:use joy.unfix.infix))
 

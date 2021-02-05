@@ -6,3 +6,4 @@ doc/site/out
 .DS_Store
 .lein*
 target
+.cpcache
